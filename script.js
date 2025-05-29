@@ -1,4 +1,99 @@
-// Smooth scrolling for anchor links
+// Chatbot functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const chatButton = document.getElementById('chatButton');
+    const chatWidget = document.querySelector('.chat-widget');
+    const closeChat = document.getElementById('closeChat');
+    const chatInput = document.getElementById('chatInput');
+    const sendMessage = document.getElementById('sendMessage');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatContainer = document.getElementById('chatContainer');
+
+    // Simple responses for the chatbot
+    const botResponses = {
+        'hi': 'Hello! How can I help you today?',
+        'hello': 'Hi there! How can I assist you?',
+        'furniture': 'We have a wide range of luxury furniture. What type are you looking for?',
+        'lighting': 'Our smart lighting solutions can transform any room. Would you like to know more?',
+        'delivery': 'We offer free delivery on all orders over $500. Delivery usually takes 3-5 business days.',
+        'price': 'Our prices vary depending on the product. Can you tell me what specific item you\'re interested in?',
+        'contact': 'You can reach our customer service at support@homeins.com or call us at 1-800-HOMEINS',
+        'warranty': 'All our products come with a standard 2-year warranty. Would you like to know about our extended warranty options?',
+        'default': 'I\'d be happy to help you with that. Would you like to speak with one of our customer service representatives?'
+    };
+
+    // Toggle chat widget
+    chatButton.addEventListener('click', () => {
+        chatContainer.style.display = 'flex';
+        chatButton.style.display = 'none';
+        chatWidget.style.display = 'block';
+    });
+
+    closeChat.addEventListener('click', () => {
+        chatContainer.style.display = 'none';
+        chatButton.style.display = 'flex';
+        chatWidget.style.display = 'block';
+    });
+
+    // Add message to chat
+    function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        messageDiv.innerHTML = `<span class="message-text">${message}</span>`;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Get bot response
+    function getBotResponse(message) {
+        message = message.toLowerCase();
+        for (let key in botResponses) {
+            if (message.includes(key)) {
+                return botResponses[key];
+            }
+        }
+        return botResponses.default;
+    }
+
+    // Handle send message
+    function handleSendMessage() {
+        const message = chatInput.value.trim();
+        if (message) {
+            addMessage(message, true);
+            chatInput.value = '';
+            
+            // Simulate bot typing
+            setTimeout(() => {
+                const response = getBotResponse(message);
+                addMessage(response);
+            }, 1000);
+        }
+    }
+
+    sendMessage.addEventListener('click', handleSendMessage);
+
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleSendMessage();
+        }
+    });
+
+    // Add sparkle effect to chat button
+    function addSparkleToChat() {
+        const sparkleCount = 3;
+        for (let i = 0; i < sparkleCount; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            chatButton.appendChild(sparkle);
+        }
+    }
+
+    // Initialize sparkles
+    addSparkleToChat();
+
+    // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
