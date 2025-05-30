@@ -415,149 +415,6 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Chatbot Styles */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            max-width: 400px;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            display: none;
-            flex-direction: column;
-        }
-
-        .chat-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #000;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 10;
-        }
-
-        .chat-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        .chat-icon {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
-
-        .chat-label {
-            font-weight: 500;
-        }
-
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            height: 500px;
-            background: #111;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .chat-header {
-            padding: 15px;
-            background: rgba(255, 215, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ffd700;
-        }
-
-        .close-chat {
-            background: transparent;
-            border: none;
-            color: #ffd700;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            line-height: 1.4;
-        }
-
-        .message.bot {
-            background: rgba(255, 215, 0, 0.1);
-            align-self: flex-start;
-        }
-
-        .message.user {
-            background: rgba(255, 215, 0, 0.3);
-            align-self: flex-end;
-        }
-
-        .message-text {
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .chat-input-container {
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-            display: flex;
-            align-items: center;
-        }
-
-        #chatInput {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            outline: none;
-            font-size: 1rem;
-        }
-
-        #sendMessage {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .send-icon {
-            font-size: 1.2rem;
-            color: #ffd700;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -588,12 +445,6 @@
             .features-grid {
                 grid-template-columns: 1fr;
             }
-
-            .chat-widget {
-                width: calc(100% - 40px);
-                right: 20px;
-                bottom: 20px;
-            }
         }
 
         /* Scroll animations */
@@ -616,168 +467,11 @@
             background: #ffd700;
             border-radius: 50%;
             animation: sparkle 2s infinite;
-        }        @keyframes sparkle {
+        }
+
+        @keyframes sparkle {
             0%, 100% { opacity: 0; transform: scale(0); }
             50% { opacity: 1; transform: scale(1); }
-        }
-
-        /* Chatbot Styles */
-        .chat-widget {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-        }
-
-        .chat-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #000;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .chat-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-        }
-
-        .chat-container {
-            display: none;
-            position: absolute;
-            bottom: 80px;
-            right: 0;
-            width: 350px;
-            height: 500px;
-            background: rgba(0, 0, 0, 0.95);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 30px rgba(255, 215, 0, 0.2);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-        }
-
-        .chat-header {
-            padding: 15px;
-            background: rgba(255, 215, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-header h3 {
-            color: #ffd700;
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        .close-chat {
-            background: transparent;
-            border: none;
-            color: #ffd700;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        .chat-messages {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            height: calc(100% - 130px);
-        }
-
-        .message {
-            max-width: 80%;
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin-bottom: 8px;
-        }
-
-        .message.bot {
-            background: rgba(255, 215, 0, 0.1);
-            align-self: flex-start;
-            border-bottom-left-radius: 5px;
-        }
-
-        .message.user {
-            background: rgba(255, 215, 0, 0.3);
-            align-self: flex-end;
-            border-bottom-right-radius: 5px;
-        }
-
-        .message-text {
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        .chat-input-container {
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            border-top: 1px solid rgba(255, 215, 0, 0.3);
-            display: flex;
-            gap: 10px;
-        }
-
-        #chatInput {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            font-size: 0.95rem;
-        }
-
-        #chatInput::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        #sendMessage {
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        #sendMessage:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .send-icon {
-            color: #000;
-            font-size: 1.2rem;
-            transform: rotate(90deg);
-        }
-
-        @media (max-width: 768px) {
-            .chat-container {
-                width: 100%;
-                height: 100vh;
-                position: fixed;
-                bottom: 0;
-                right: 0;
-                border-radius: 0;
-            }
-
-            .chat-button {
-                padding: 12px 25px;
-            }
         }
     </style>
 </head>
@@ -870,30 +564,7 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Chatbot Interface -->
-    <div class="chat-widget">
-        <div class="chat-button" id="chatButton">
-            <span class="chat-icon">💬</span>
-            <span class="chat-label">Chat with us</span>
-        </div>
-        <div class="chat-container" id="chatContainer">
-            <div class="chat-header">
-                <h3>HomeIns Assistant</h3>
-                <button class="close-chat" id="closeChat">×</button>
-            </div>
-            <div class="chat-messages" id="chatMessages">
-                <div class="message bot">
-                    <span class="message-text">👋 Welcome to HomeIns! How can I help you today?</span>
-                </div>
-            </div>
-            <div class="chat-input-container">
-                <input type="text" id="chatInput" placeholder="Type your message...">
-                <button id="sendMessage">
-                    <span class="send-icon">➤</span>
-                </button>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <footer id="contact">
         <div class="container">
@@ -941,6 +612,109 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(255, 215, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(255, 215, 0, 0.2)';
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add some dynamic stats animation
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-item h3');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/\D/g, ''));
+                const suffix = counter.textContent.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current) + suffix;
+                }, 20);
+            });
+        };
+
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        statsObserver.observe(statsSection);
+
+        // Create sparkle effects
+        const createSparkles = () => {
+            const sparkleCount = 20;
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                document.querySelector('.hero').appendChild(sparkle);
+            }
+        };
+
+        // Initialize sparkles
+        createSparkles();
+
+        console.log("✨ HomeIns - Premium Home Solutions loaded!");
+        console.log("🏠 Luxury living, delivered to your doorstep");
+    </script>
 </body>
 </html>
